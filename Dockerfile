@@ -15,11 +15,3 @@ COPY --from=builder /usr/src/build/dist /usr/src/app/dist
 COPY --from=builder /usr/src/build/app.conf /etc/nginx/conf.d/
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
-
-#WORKDIR /usr/src/app
-#
-#RUN npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm install
-#
-#ENTRYPOINT ["node","index"]
-#EXPOSE 3000
-

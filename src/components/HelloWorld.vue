@@ -43,9 +43,13 @@
             msg: String
         },
         async mounted() {
-            var data = await request.request('GET', '/', { name: "limx" });
+            var data = await request.request('GET', '/user/1');
             // eslint-disable-next-line no-console
             console.log(data);
+
+            var res = await request.request('POST', '/user/1', { name: "limx" });
+            // eslint-disable-next-line no-console
+            console.log(res);
         }
     }
 </script>
