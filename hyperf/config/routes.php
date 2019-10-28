@@ -13,3 +13,6 @@ declare(strict_types=1);
 use Hyperf\HttpServer\Router\Router;
 
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
+
+Router::get('/user/{id:\d+}', 'App\Controller\UserController@info');
+Router::post('/user/{id:\d+}', 'App\Controller\UserController@update');
