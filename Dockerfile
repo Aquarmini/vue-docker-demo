@@ -12,6 +12,7 @@ RUN npm run-script build
 FROM nginx:alpine
 
 COPY --from=builder /usr/src/build/dist /usr/src/app/dist
+COPY --from=builder /usr/src/build/app.conf /etc/nginx/conf.d/
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
